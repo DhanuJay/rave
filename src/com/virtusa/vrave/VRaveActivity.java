@@ -35,6 +35,7 @@ public class VRaveActivity extends FragmentActivity {
 		
 		final TabHost tabs= (TabHost) findViewById(R.id.tabhost);
 		tabs.setup();
+		
 		TabHost.TabSpec spec=tabs.newTabSpec("tag1");
 		spec.setContent(R.id.fragment1);
 		spec.setIndicator("View Raves");
@@ -44,7 +45,6 @@ public class VRaveActivity extends FragmentActivity {
 		spec.setIndicator("My Badges");
 		tabs.addTab(spec);
 		tabs.setCurrentTab(0);
-	
 		
 		DisplayMetrics metrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(metrics);
