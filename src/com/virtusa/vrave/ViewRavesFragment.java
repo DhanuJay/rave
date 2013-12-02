@@ -16,7 +16,7 @@ public class ViewRavesFragment extends Fragment {
 		View view;
 		view = inflater.inflate(R.layout.view_raves_fragment_layout, container,false);
 		ListView l = (ListView) view.findViewById(R.id.listView1);
-		String[] from = {"Good job","Awesome code","Nice help","Nice thinking","Great help"};
+		String[] from = {"Good job","Awesome code","Nice help","Nice thinking","Great help","Good job","Awesome code","Nice help","Nice thinking","Great help","Good job","Awesome code","Nice help","Nice thinking","Great help"};
 		ArrayAdapter adapter = new ArrayAdapter(getActivity(),R.layout.view_rave_list_item, R.id.listText, from);
 		l.setAdapter(adapter);
 		return view;

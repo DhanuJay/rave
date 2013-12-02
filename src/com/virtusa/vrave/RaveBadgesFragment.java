@@ -10,7 +10,7 @@ public class RaveBadgesFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState){
 		View view;
-		view = inflater.inflate(R.layout.view_raves_fragment_layout, container,false);
+		view = inflater.inflate(R.layout.rave_badges_fragment_layout, container,false);
 		return view;
 	}
 

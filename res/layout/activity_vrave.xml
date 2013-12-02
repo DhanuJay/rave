@@ -55,9 +55,9 @@
             android:id="@+id/upperContainer"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="#E9E9E9"
             android:clickable="true"
-            android:orientation="vertical"
-            android:background="#dbdbdc" >
+            android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/textView1"
@@ -81,7 +81,7 @@
             android:id="@+id/formconteiner"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:clickable="true"
+            android:background="#E9E9E9"
             android:orientation="vertical" >
 
             <EditText
@@ -118,19 +118,18 @@
             <RelativeLayout
                 android:id="@+id/bottomContainer"
                 android:layout_width="fill_parent"
-                android:layout_height="17dip"
+                android:layout_height="30dip"
                 android:layout_marginLeft="2dip"
                 android:layout_marginRight="2dip"
                 android:layout_marginTop="54dip"
-                android:background="@drawable/search_all_search_box_back"
-                android:clickable="false" >
+                android:background="@drawable/search_all_search_box_back" >
 
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="wrap_content"
                     android:layout_height="8dip"
-                    android:layout_centerInParent="true"
-                    android:layout_marginTop="2dip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dip"
                     android:src="@drawable/up" />
             </RelativeLayout>
         </LinearLayout>
@@ -145,7 +144,7 @@
             android:id="@+id/tabhost"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#dbdbdc" >
+            android:background="#E9E9E9" >
 
             <LinearLayout
                 android:layout_width="match_parent"
