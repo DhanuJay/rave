@@ -36,6 +36,7 @@ public class VRaveActivity extends FragmentActivity {
 		
 		final TabHost tabs= (TabHost) findViewById(R.id.tabhost);
 		tabs.setup();
+		
 		TabHost.TabSpec spec=tabs.newTabSpec("tag1");
 		spec.setContent(R.id.fragment1);
 		spec.setIndicator("View Raves");
@@ -45,8 +46,6 @@ public class VRaveActivity extends FragmentActivity {
 		spec.setIndicator("My Badges");
 		tabs.addTab(spec);
 		tabs.setCurrentTab(0);
-		
-
 		
 		DisplayMetrics metrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(metrics);
@@ -59,12 +58,7 @@ public class VRaveActivity extends FragmentActivity {
 //		final int height = size.y;
 		//final int height = display.getHeight();
 		
-		final LinearLayout l = (LinearLayout) findViewById(R.id.upperContainer);
-		
-		
-		
-		
-		
+		final RelativeLayout l = (RelativeLayout) findViewById(R.id.upperContainer);
 		final LinearLayout l2 = (LinearLayout) findViewById(R.id.lenear);
 		final ImageView iv2 = (ImageView) findViewById(R.id.imageView2);
 		final RelativeLayout l3 = (RelativeLayout) findViewById(R.id.bottomContainer);
@@ -73,20 +67,36 @@ public class VRaveActivity extends FragmentActivity {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				int action = MotionEventCompat.getActionMasked(event);
-				if(!sendRaveOpen){
 				switch(action){
 				case MotionEvent.ACTION_DOWN:
-					settings.setVisibility(View.GONE);
+				if(!sendRaveOpen){
+				
+					//settings.setVisibility(View.GONE);
 				send.setVisibility(View.VISIBLE);
 				tv.setText("Send Rave");
 					//v.setLayoutParams(params);
-				ExpandAnimation anim  = new ExpandAnimation(l2,height, true,60);
+				ExpandAnimation anim  = new ExpandAnimation(l2,height, true,125);
 				anim.setDuration(500);
 				l.startAnimation(anim);
 				sendRaveOpen = true;
 				return true;
 				}
+				
+				if(sendRaveOpen){
+					send.setVisibility(View.GONE);
+					tv.setText("View Rave");
+					ExpandAnimation anim  = new ExpandAnimation(l2,height-25, false,125);
+					anim.setDuration(500);
+					l.startAnimation(anim);
+					sendRaveOpen = false;
+				return true;
 				}
+				
+				}
+				
+				
+				
+			
 				return true;
 			}
 			
@@ -115,10 +125,10 @@ public class VRaveActivity extends FragmentActivity {
 				switch(action){
 				case MotionEvent.ACTION_UP:
 					send.setVisibility(View.GONE);
-					settings.setVisibility(View.VISIBLE);
+					//settings.setVisibility(View.VISIBLE);
 					tv.setText("View Rave");
 				//	iv.setVisibility(View.VISIBLE);
-					ExpandAnimation anim  = new ExpandAnimation(l2,height, false,71);
+					ExpandAnimation anim  = new ExpandAnimation(l2,height-25, false,125);
 					anim.setDuration(500);
 					l.startAnimation(anim);
 					sendRaveOpen = false;

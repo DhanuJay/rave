@@ -40,9 +40,9 @@
         android:layout_height="40dp"
         android:layout_below="@+id/usernameFIeld"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="1dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginTop="1dp"
         android:background="#F5D312"
         android:ems="10"
         android:hint="password"
@@ -54,9 +54,9 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_below="@+id/passwordField"
         android:layout_width="418dp"
         android:layout_height="40dp"
+        android:layout_below="@+id/passwordField"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
@@ -65,7 +65,7 @@
         android:text="Login"
         android:textColor="#EAB026"
         android:textSize="15sp" />
-  
+
     <ProgressBar
         android:id="@+id/progressBarLogin"
         android:layout_width="wrap_content"
