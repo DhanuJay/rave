@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TabHost;
+import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,7 +45,8 @@ public class VRaveActivity extends FragmentActivity {
 		spec.setIndicator("My Badges");
 		tabs.addTab(spec);
 		tabs.setCurrentTab(0);
-	
+		
+
 		
 		DisplayMetrics metrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(metrics);
@@ -58,6 +60,11 @@ public class VRaveActivity extends FragmentActivity {
 		//final int height = display.getHeight();
 		
 		final LinearLayout l = (LinearLayout) findViewById(R.id.upperContainer);
+		
+		
+		
+		
+		
 		final LinearLayout l2 = (LinearLayout) findViewById(R.id.lenear);
 		final ImageView iv2 = (ImageView) findViewById(R.id.imageView2);
 		final RelativeLayout l3 = (RelativeLayout) findViewById(R.id.bottomContainer);
@@ -125,7 +132,8 @@ public class VRaveActivity extends FragmentActivity {
 		
 		
 	}
-
+	
+//	     
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
