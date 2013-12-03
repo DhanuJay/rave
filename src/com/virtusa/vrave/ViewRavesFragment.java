@@ -5,10 +5,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.AdapterViewFlipper;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class ViewRavesFragment extends Fragment {
 	@Override
@@ -19,6 +20,13 @@ public class ViewRavesFragment extends Fragment {
 		String[] from = {"Good job","Awesome code","Nice help","Nice thinking","Great help","Good job","Awesome code","Nice help","Nice thinking","Great help","Good job","Awesome code","Nice help","Nice thinking","Great help"};
 		ArrayAdapter adapter = new ArrayAdapter(getActivity(),R.layout.view_rave_list_item, R.id.listText, from);
 		l.setAdapter(adapter);
+		
+		l.setOnItemClickListener(new OnItemClickListener() {
+	        public void onItemClick(AdapterView<?> adapter, View view,
+	                int position, long id) {
+	        }
+	    });		
+		
 		return view;
 	}
 

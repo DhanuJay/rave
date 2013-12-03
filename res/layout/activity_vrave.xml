@@ -4,6 +4,8 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
+    <!-- action bar layout -->
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -18,12 +20,22 @@
             android:layout_centerVertical="true"
             android:src="@drawable/ic_launcher" />
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageView3"
+            android:textColor="#dbdbdc"
+            android:textSize="16sp" />
+
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="36dp"
             android:src="@drawable/ic_action_send_now" />
 
         <ImageView
@@ -33,28 +45,20 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:src="@drawable/ic_action_settings" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/imageView3"
-            android:textColor="#dbdbdc"
-            android:textSize="16sp" />
     </RelativeLayout>
+    <!-- send rave tab view -->
 
     <LinearLayout
         android:id="@+id/lenear"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="50dip"
         android:clickable="true"
         android:orientation="vertical" >
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/upperContainer"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="53dip"
             android:background="#E9E9E9"
             android:clickable="true"
             android:orientation="vertical" >
@@ -63,28 +67,30 @@
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dip"
+                android:layout_centerInParent="true"
                 android:text="SEND RAVE"
                 android:textSize="13sp"
                 android:textStyle="bold" />
 
             <View
                 android:id="@+id/view"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="5dip"
-                android:layout_marginTop="7dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
                 android:background="#ff33b5e5" />
-        </LinearLayout>
 
-        <LinearLayout
+        </RelativeLayout>
+
+        <RelativeLayout
             android:id="@+id/formconteiner"
             android:layout_width="match_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:background="#E9E9E9"
             android:orientation="vertical" >
 
             <EditText
+                
                 android:id="@+id/editText1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -96,6 +102,7 @@
 
             <EditText
                 android:id="@+id/editText2"
+                android:layout_below="@id/editText1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -106,8 +113,9 @@
 
             <EditText
                 android:id="@+id/editText3"
+                android:layout_below="@id/editText2"
                 android:layout_width="match_parent"
-                android:layout_height="263dip"
+                android:layout_height="250dip"
                 android:ems="10"
                 android:gravity="top"
                 android:hint="Rave Message" >
@@ -121,8 +129,8 @@
                 android:layout_height="30dip"
                 android:layout_marginLeft="2dip"
                 android:layout_marginRight="2dip"
-                android:layout_marginTop="54dip"
-                android:background="@drawable/search_all_search_box_back" >
+                android:background="@drawable/search_all_search_box_back" 
+                android:layout_alignParentBottom="true">
 
                 <ImageView
                     android:id="@+id/imageView2"
@@ -132,7 +140,7 @@
                     android:layout_marginTop="4dip"
                     android:src="@drawable/up" />
             </RelativeLayout>
-        </LinearLayout>
+        </RelativeLayout>
     </LinearLayout>
 
     <LinearLayout

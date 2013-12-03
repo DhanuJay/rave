@@ -2,19 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="#efefef">
+    android:background="#efefef"
+    android:orientation="vertical" >
 
     <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:layout_marginTop="3dip"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="5dip"
         android:layout_marginRight="5dip"
-        android:scrollbars="none"
+        android:layout_marginTop="3dip"
+        android:cacheColorHint="@android:color/transparent"
         android:divider="#efefef"
-      android:dividerHeight="5dip">
+        android:dividerHeight="5dip"
+        android:scrollbars="none" >
     </ListView>
 
 </LinearLayout>

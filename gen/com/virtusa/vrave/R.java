@@ -32,6 +32,7 @@ public final class R {
         public static final int search_all_search_box_back=0x7f020004;
         public static final int splashscreen=0x7f020005;
         public static final int up=0x7f020006;
+        public static final int view_raves_list_item_bg=0x7f020007;
     }
     public static final class id {
         public static final int action_settings=0x7f090017;
@@ -45,8 +46,8 @@ public final class R {
         public static final int fragment2=0x7f090014;
         public static final int imageView2=0x7f090011;
         public static final int imageView3=0x7f090005;
-        public static final int imageView4=0x7f090006;
-        public static final int imageView5=0x7f090007;
+        public static final int imageView4=0x7f090007;
+        public static final int imageView5=0x7f090008;
         public static final int lenear=0x7f090009;
         public static final int listText=0x7f090015;
         public static final int listView1=0x7f090016;
@@ -54,7 +55,7 @@ public final class R {
         public static final int progressBarLogin=0x7f090004;
         public static final int tabhost=0x7f090012;
         public static final int textView1=0x7f090000;
-        public static final int textView2=0x7f090008;
+        public static final int textView2=0x7f090006;
         public static final int upperContainer=0x7f09000a;
         public static final int usernameFIeld=0x7f090001;
         public static final int view=0x7f09000b;
