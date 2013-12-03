@@ -69,6 +69,7 @@ public class VRaveActivity extends FragmentActivity {
 				int action = MotionEventCompat.getActionMasked(event);
 				switch(action){
 				case MotionEvent.ACTION_DOWN:
+					l.setBackgroundColor(Color.parseColor("#ff33b5e5"));
 				if(!sendRaveOpen){
 				
 					//settings.setVisibility(View.GONE);
@@ -91,17 +92,17 @@ public class VRaveActivity extends FragmentActivity {
 					sendRaveOpen = false;
 				return true;
 				}
-				
-				}
-				
-				
-				
-			
+				break;
+				case MotionEvent.ACTION_UP:
+					l.setBackgroundColor(Color.parseColor("#ffffff"));
+							
 				return true;
+				
 			}
+				return true;
 			
 			
-		});
+			}});
 		
 		
 		
@@ -139,7 +140,30 @@ public class VRaveActivity extends FragmentActivity {
 		});
 		
 		
-		
+		send.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if(event.getAction()==MotionEvent.ACTION_DOWN){
+					send.setColorFilter(Color.rgb(51, 181, 229));
+				}
+				 else if(event.getAction()==MotionEvent.ACTION_UP){
+					send.setColorFilter(Color.WHITE);}
+				return true;
+			}
+		});
+		settings.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if(event.getAction()==MotionEvent.ACTION_DOWN){
+					settings.setColorFilter(Color.rgb(51, 181, 229));
+				}
+				 else if(event.getAction()==MotionEvent.ACTION_UP){
+					 settings.setColorFilter(Color.WHITE);}
+				return true;
+			}
+		});
 		
 	}
 	
