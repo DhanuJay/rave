@@ -6,10 +6,32 @@
     android:background="#FFFFFF"
     android:paddingLeft="2dip">
 
-    <TextView
-        android:id="@+id/listText"
+       <TextView
+        android:id="@+id/ravetitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:adjustViewBounds="true"
         android:text="Medium Text"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/raveexplanation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ravetitle"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="Small Text test"
+        android:textColor="#000000" />
+    
+    <TextView
+        android:id="@+id/raveperson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/raveexplanation"
+        android:text="Small Text"
+        android:textColor="#000000"/>
 </LinearLayout>
