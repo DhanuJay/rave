@@ -29,14 +29,14 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:padding="15dp"
-                android:src="@drawable/engizer" />
+                android:src="@drawable/coach" />
 
             <ImageView
                 android:id="@+id/badge3"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:padding="15dp"
-                android:src="@drawable/hulk" />
+                android:src="@drawable/codeninja" />
         </TableRow>
 
         <TableRow
@@ -50,21 +50,49 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:padding="15dp"
-                android:src="@drawable/rave" />
+                android:src="@drawable/einstien" />
 
             <ImageView
                 android:id="@+id/badge5"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:padding="15dp"
-                android:src="@drawable/rockstar" />
+                android:src="@drawable/engizer" />
 
             <ImageView
                 android:id="@+id/badge6"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:padding="15dp"
-                android:src="@drawable/vip" />
+                android:src="@drawable/hulk" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:layout_gravity="center" >
+
+<!--             <ImageView -->
+<!--                 android:id="@+id/badge7" -->
+<!--                 android:layout_width="100dp" -->
+<!--                 android:layout_height="100dp" -->
+<!--                 android:padding="15dp" -->
+<!--                 android:src="@drawable/rave" /> -->
+
+<!--             <ImageView -->
+<!--                 android:id="@+id/badge8" -->
+<!--                 android:layout_width="100dp" -->
+<!--                 android:layout_height="100dp" -->
+<!--                 android:padding="15dp" -->
+<!--                 android:src="@drawable/rockstar" /> -->
+
+<!--             <ImageView -->
+<!--                 android:id="@+id/badge9" -->
+<!--                 android:layout_width="100dp" -->
+<!--                 android:layout_height="100dp" -->
+<!--                 android:padding="15dp" -->
+<!--                 android:src="@drawable/vip" /> -->
         </TableRow>
 
         <TableRow

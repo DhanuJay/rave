@@ -112,7 +112,7 @@ public class VRaveActivity extends FragmentActivity {
 				}
 				break;
 				case MotionEvent.ACTION_UP:
-					sendRaveHeader.setBackgroundColor(Color.parseColor("#ffffff"));
+					sendRaveHeader.setBackgroundColor(Color.parseColor("#dbdbdc"));
 							
 				return true;
 				
