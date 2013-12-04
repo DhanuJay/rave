@@ -73,42 +73,19 @@
             android:layout_height="130dp"
             android:layout_gravity="center" >
 
-<!--             <ImageView -->
-<!--                 android:id="@+id/badge7" -->
-<!--                 android:layout_width="100dp" -->
-<!--                 android:layout_height="100dp" -->
-<!--                 android:padding="15dp" -->
-<!--                 android:src="@drawable/rave" /> -->
-
-<!--             <ImageView -->
-<!--                 android:id="@+id/badge8" -->
-<!--                 android:layout_width="100dp" -->
-<!--                 android:layout_height="100dp" -->
-<!--                 android:padding="15dp" -->
-<!--                 android:src="@drawable/rockstar" /> -->
-
-<!--             <ImageView -->
-<!--                 android:id="@+id/badge9" -->
-<!--                 android:layout_width="100dp" -->
-<!--                 android:layout_height="100dp" -->
-<!--                 android:padding="15dp" -->
-<!--                 android:src="@drawable/vip" /> -->
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow4"
-            android:layout_width="wrap_content"
-            android:layout_height="130dp"
-            android:layout_gravity="center" >
-
             <ImageView
-                android:id="@+id/badge10"
+                android:id="@+id/imageView1"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_column="1"
                 android:padding="15dp"
-                android:src="@drawable/wizardofbugs" />
+                android:layout_column="1"
+                android:src="@drawable/rave" />
+
+            
+     
         </TableRow>
+
+        
     </TableLayout>
 
 </LinearLayout>

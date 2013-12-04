@@ -22,15 +22,19 @@ import android.widget.Toast;
 
 public class VRaveActivity extends FragmentActivity {
 	boolean sendRaveOpen = false;
+	private ImageView send;
+	private TextView tv;
+	private LinearLayout formContainer;
+	private int parentHeight;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_vrave);
 		
-		final ImageView send = (ImageView) findViewById(R.id.imageView4);
+		send = (ImageView) findViewById(R.id.imageView4);
 		final ImageView settings = (ImageView) findViewById(R.id.imageView5);
 		//final ImageView draweUp = (ImageView) findViewById(R.id.drawerUp);
-		final TextView tv = (TextView) findViewById(R.id.textView2);
+		tv = (TextView) findViewById(R.id.textView2);
 		settings.setVisibility(View.VISIBLE);
 		send.setVisibility(View.GONE);
 		//draweUp.setVisibility(View.GONE);
@@ -54,11 +58,11 @@ public class VRaveActivity extends FragmentActivity {
 		/**Send rave form container linear layout
 		 * this layout will expand
 		 */
-		final LinearLayout formContainer = (LinearLayout) findViewById(R.id.linearLayoutSendRaveFormContainer);
+		formContainer = (LinearLayout) findViewById(R.id.linearLayoutSendRaveFormContainer);
 		/**Get parent layout height*/
 		LinearLayout parentLayout = (LinearLayout) findViewById(R.id.linearLayoutParent);
 		LayoutParams parentLayoutParams = parentLayout.getLayoutParams();
-		final int parentHeight = parentLayoutParams.height;
+		parentHeight = parentLayoutParams.height;
 		/**Send rave collapse the view*/
 		final RelativeLayout lenearLayoutSendRaveBottom = (RelativeLayout) findViewById(R.id.bottomContainer);
 		
@@ -198,6 +202,21 @@ public class VRaveActivity extends FragmentActivity {
 		return true;
 	}
 	
+	@Override
+	public void onBackPressed() {
+		if(sendRaveOpen){
+			send.setVisibility(View.GONE);
+			tv.setText("View Rave");
+			ExpandAnimation anim  = new ExpandAnimation(formContainer,parentHeight, false,0);
+			anim.setDuration(100);
+			formContainer.startAnimation(anim);
+			sendRaveOpen = false;
+		}
+		else{
+			finish();
+		}
+	}
+	
 	/**
 	 * Expand animation for send rave from
 	 * */
@@ -227,6 +246,8 @@ public class VRaveActivity extends FragmentActivity {
 	        view.requestLayout();
 	       
 	    }
+	    
+	  
 
 	    @Override
 	    public void initialize(int width, int height, int parentWidth,
