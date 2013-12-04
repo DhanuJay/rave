@@ -4,11 +4,12 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.MotionEventCompat;
+import android.view.ViewGroup.LayoutParams;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
@@ -16,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TabHost;
-import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,9 +29,11 @@ public class VRaveActivity extends FragmentActivity {
 		
 		final ImageView send = (ImageView) findViewById(R.id.imageView4);
 		final ImageView settings = (ImageView) findViewById(R.id.imageView5);
+		//final ImageView draweUp = (ImageView) findViewById(R.id.drawerUp);
 		final TextView tv = (TextView) findViewById(R.id.textView2);
 		settings.setVisibility(View.VISIBLE);
 		send.setVisibility(View.GONE);
+		//draweUp.setVisibility(View.GONE);
 		tv.setText("View Rave");
 		
 		final TabHost tabs= (TabHost) findViewById(R.id.tabhost);
@@ -47,10 +49,26 @@ public class VRaveActivity extends FragmentActivity {
 		tabs.addTab(spec);
 		tabs.setCurrentTab(0);
 		
-		DisplayMetrics metrics = new DisplayMetrics();
-		getWindowManager().getDefaultDisplay().getMetrics(metrics);
-
-		final int height = metrics.heightPixels;
+		/**Send rave upper relative layout*/
+		final RelativeLayout sendRaveHeader = (RelativeLayout) findViewById(R.id.relativeLayoutSendRaveUpper);
+		/**Send rave form container linear layout
+		 * this layout will expand
+		 */
+		final LinearLayout formContainer = (LinearLayout) findViewById(R.id.linearLayoutSendRaveFormContainer);
+		/**Get parent layout height*/
+		LinearLayout parentLayout = (LinearLayout) findViewById(R.id.linearLayoutParent);
+		LayoutParams parentLayoutParams = parentLayout.getLayoutParams();
+		final int parentHeight = parentLayoutParams.height;
+		/**Send rave collapse the view*/
+		final RelativeLayout lenearLayoutSendRaveBottom = (RelativeLayout) findViewById(R.id.bottomContainer);
+		
+//		DisplayMetrics metrics = new DisplayMetrics();
+//		getWindowManager().getDefaultDisplay().getMetrics(metrics);
+//
+//		final int height = metrics.heightPixels;
+		
+		
+		
 		
 //		Display display = getWindowManager().getDefaultDisplay();
 //		Point size = new Point();
@@ -58,27 +76,27 @@ public class VRaveActivity extends FragmentActivity {
 //		final int height = size.y;
 		//final int height = display.getHeight();
 		
-		final RelativeLayout l = (RelativeLayout) findViewById(R.id.upperContainer);
-		final LinearLayout l2 = (LinearLayout) findViewById(R.id.lenear);
-		final ImageView iv2 = (ImageView) findViewById(R.id.imageView2);
-		final RelativeLayout l3 = (RelativeLayout) findViewById(R.id.bottomContainer);
-		l.setOnTouchListener(new OnTouchListener() {
+//		final RelativeLayout l = (RelativeLayout) findViewById(R.id.upperContainer);
+//		final LinearLayout l2 = (LinearLayout) findViewById(R.id.lenear);
+//		final ImageView iv2 = (ImageView) findViewById(R.id.imageView2);
+//		final RelativeLayout l3 = (RelativeLayout) findViewById(R.id.bottomContainer);
+		sendRaveHeader.setOnTouchListener(new OnTouchListener() {
 			
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				int action = MotionEventCompat.getActionMasked(event);
 				switch(action){
 				case MotionEvent.ACTION_DOWN:
-					l.setBackgroundColor(Color.parseColor("#ff33b5e5"));
+					sendRaveHeader.setBackgroundColor(Color.parseColor("#ff33b5e5"));
 				if(!sendRaveOpen){
 				
 					//settings.setVisibility(View.GONE);
 				send.setVisibility(View.VISIBLE);
 				tv.setText("Send Rave");
 					//v.setLayoutParams(params);
-				ExpandAnimation anim  = new ExpandAnimation(l2,height, true,125);
-				anim.setDuration(500);
-				l.startAnimation(anim);
+				ExpandAnimation anim  = new ExpandAnimation(formContainer,parentHeight, true,0);
+				anim.setDuration(100);
+				formContainer.startAnimation(anim);
 				sendRaveOpen = true;
 				return true;
 				}
@@ -86,23 +104,28 @@ public class VRaveActivity extends FragmentActivity {
 				if(sendRaveOpen){
 					send.setVisibility(View.GONE);
 					tv.setText("View Rave");
-					ExpandAnimation anim  = new ExpandAnimation(l2,height-25, false,125);
-					anim.setDuration(500);
-					l.startAnimation(anim);
+					ExpandAnimation anim  = new ExpandAnimation(formContainer,parentHeight, false,0);
+					anim.setDuration(100);
+					formContainer.startAnimation(anim);
 					sendRaveOpen = false;
 				return true;
 				}
 				break;
 				case MotionEvent.ACTION_UP:
-					l.setBackgroundColor(Color.parseColor("#ffffff"));
+					sendRaveHeader.setBackgroundColor(Color.parseColor("#ffffff"));
 							
 				return true;
 				
-			}
+				}
+				
+				
+				
+			
 				return true;
+			}
 			
 			
-			}});
+		});
 		
 		
 		
@@ -118,7 +141,7 @@ public class VRaveActivity extends FragmentActivity {
 			}
 		});
 		
-		l3.setOnTouchListener(new OnTouchListener() {
+		lenearLayoutSendRaveBottom.setOnTouchListener(new OnTouchListener() {
 			
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
@@ -129,16 +152,15 @@ public class VRaveActivity extends FragmentActivity {
 					//settings.setVisibility(View.VISIBLE);
 					tv.setText("View Rave");
 				//	iv.setVisibility(View.VISIBLE);
-					ExpandAnimation anim  = new ExpandAnimation(l2,height-25, false,125);
-					anim.setDuration(500);
-					l.startAnimation(anim);
+					ExpandAnimation anim  = new ExpandAnimation(formContainer,parentHeight, false,0);
+					anim.setDuration(100);
+					formContainer.startAnimation(anim);
 					sendRaveOpen = false;
 				return true;
 				}
 				return true;
 			}
 		});
-		
 		
 		send.setOnTouchListener(new OnTouchListener() {
 			
@@ -165,15 +187,20 @@ public class VRaveActivity extends FragmentActivity {
 			}
 		});
 		
+		
+		
 	}
-	
-//	     
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.vrave, menu);
 		return true;
 	}
+	
+	/**
+	 * Expand animation for send rave from
+	 * */
 	
 	public class ExpandAnimation extends Animation {
 	    private final int targetHeight;
