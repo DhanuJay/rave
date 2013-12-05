@@ -13,7 +13,7 @@
         android:layout_marginRight="5dip"
         android:layout_marginTop="3dip"
         android:cacheColorHint="@android:color/transparent"
-        android:divider="#efefef"
+        android:divider="#FFFFFF"
         android:dividerHeight="2dp"
         android:scrollbars="none" >
     </ListView>
