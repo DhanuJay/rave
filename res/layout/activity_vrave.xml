@@ -25,8 +25,8 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp"
             android:layout_toRightOf="@+id/imageView3"
             android:textColor="#dbdbdc"
             android:textSize="16sp" />
@@ -117,15 +117,14 @@
                 android:ems="10"
                 android:hint="Select category" />
 
-
             <EditText
                 android:id="@+id/editText4"
                 android:layout_width="match_parent"
-                android:layout_below="@id/editText2"
                 android:layout_height="75dp"
-                android:gravity="top"
+                android:layout_below="@id/editText2"
                 android:layout_marginTop="5dp"
                 android:ems="10"
+                android:gravity="top"
                 android:hint="Enter rave message" />
 
             <RelativeLayout
