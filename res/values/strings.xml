@@ -6,5 +6,11 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_vrave">VRaveActivity</string>
+    <string-array name="rave_categories">
+        <item>You are a role model</item>
+        <item>Awesome Code</item>
+        <item>Sharp testing</item>
+        <item>Good job</item>
+    </string-array>
 
 </resources>

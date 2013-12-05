@@ -13,9 +13,13 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,6 +38,8 @@ public class VRaveActivity extends FragmentActivity {
 		send = (ImageView) findViewById(R.id.imageView4);
 		final ImageView settings = (ImageView) findViewById(R.id.imageView5);
 		//final ImageView draweUp = (ImageView) findViewById(R.id.drawerUp);
+		
+		
 		tv = (TextView) findViewById(R.id.textView2);
 		settings.setVisibility(View.VISIBLE);
 		send.setVisibility(View.GONE);
@@ -191,7 +197,34 @@ public class VRaveActivity extends FragmentActivity {
 			}
 		});
 		
+		//initializing the spinner
+		Spinner spinner = (Spinner) findViewById(R.id.categoryselector);
+		// Create an ArrayAdapter using the string array and a default spinner layout
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+		        R.array.rave_categories, android.R.layout.simple_spinner_item);
+		// Specify the layout to use when the list of choices appears
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		// Apply the adapter to the spinner
+		spinner.setAdapter(adapter);
 		
+		
+		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View arg1,
+					int arg2, long arg3) {
+				String selected = (String) parent.getSelectedItem();
+				
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			
+		});
 		
 	}
 

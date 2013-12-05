@@ -108,19 +108,28 @@
                 android:ems="10"
                 android:hint="Enter person name to rave" />
 
-            <EditText
-                android:id="@+id/editText2"
+            <!-- <EditText -->
+            <!-- android:id="@+id/editText2" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_below="@id/editText1" -->
+            <!-- android:ems="10" -->
+            <!-- android:hint="Select category" /> -->
+
+
+            <!-- Rave category selector spinner -->
+
+            <Spinner
+                android:id="@+id/categoryselector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/editText1"
-                android:ems="10"
-                android:hint="Select category" />
+                android:layout_below="@id/editText1"/>
 
             <EditText
                 android:id="@+id/editText3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/editText2"
+                android:layout_below="@id/categoryselector"
                 android:layout_marginTop="5dp"
                 android:ems="10"
                 android:hint="Enter person name to notify" />
@@ -128,11 +137,11 @@
             <EditText
                 android:id="@+id/editText4"
                 android:layout_width="match_parent"
-                android:layout_below="@id/editText3"
                 android:layout_height="75dp"
-                android:gravity="top"
+                android:layout_below="@id/editText3"
                 android:layout_marginTop="5dp"
                 android:ems="10"
+                android:gravity="top"
                 android:hint="Enter rave message" />
 
             <RelativeLayout
